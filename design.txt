@@ -7,3 +7,5 @@ friending - look at sample app with following/followers example
 posts - post model
 news feed - shows all posts but only friends
 liking -
+
+name, email, imagelink
