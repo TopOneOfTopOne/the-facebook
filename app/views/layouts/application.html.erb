@@ -7,16 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <%= render 'shared/navbar' %>
-<h1><%= yield :header %></h1>
-<div class="container">
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%=key%>">
+<% flash.each do |key, value| %>
+    <div class="alert alert-info">
       <%= value %>
     </div>
-  <% end %>
+<% end %>
+<div class="container">
+  <h1><%= yield :header %></h1>
+
+  <div class="col-md-4 col-md-offset-4">
+    <%= yield %>
+  </div>
 </div>
-<%= yield %>
+
+
 
 </body>
 </html>
