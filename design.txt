@@ -1,0 +1,9 @@
+Authentication
+    sign in with facebook - omniauth-facebook w/ devise/registerable
+    send welcome message - sendgrid + actionmailer
+    persistent session - devise/rememberable
+user profiles - users#show
+friending - look at sample app with following/followers example
+posts - post model
+news feed - shows all posts but only friends
+liking -
