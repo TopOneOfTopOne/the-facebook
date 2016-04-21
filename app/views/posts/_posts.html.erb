@@ -2,7 +2,7 @@
   <% Post.all.each do |post| %>
     <div class="panel-body">
       <div class="panel panel-default" style="background-color: lightgrey;">
-        <%= image_tag(post.user.image_link) %>
+        <%= image_tag(post.user.image_link, size: '100x100') %>
         <strong><%= post.user.name %></strong>
         <%= post.body %>
             |

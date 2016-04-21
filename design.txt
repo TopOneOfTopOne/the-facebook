@@ -14,3 +14,8 @@ liking -
 * Send welcome mail on sign up
 * Utilises devise + bootstrap
 * Most recent posts displayed first
+* commenting
+
+heroku
+rake db:migrate
+figaro envs
