@@ -13,3 +13,4 @@ liking -
 * OAuth2 w/ facebook
 * Send welcome mail on sign up
 * Utilises devise + bootstrap
+* Most recent posts displayed first

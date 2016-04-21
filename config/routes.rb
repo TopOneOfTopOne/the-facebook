@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'auth/:provider/callback', to: 'users#external_create'
   get '/profile/:id' => 'users#show', as: 'profile'
-  post '/post' => 'posts#create'
+  # post '/post' => 'posts#create'
+  resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

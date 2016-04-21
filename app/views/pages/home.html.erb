@@ -1,4 +1,7 @@
 <% if user_signed_in? %>
   <%= render 'posts/post_form' %>
+
 <% else %>
 <% end %>
+<hr>
+<%= render 'posts/posts' %>

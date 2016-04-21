@@ -1,0 +1,9 @@
+<% Post.all.each do |post| %>
+    <span class="col-md-12">
+  <%= image_tag(post.user.image_link) %>
+  <%= post.body %>
+      |
+  <%= time_ago_in_words post.created_at %> ago
+      <%= link_to("delete", post, method: :delete, class: "btn btn-danger") if current_user == post.user %>
+      </span>
+<% end %>

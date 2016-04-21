@@ -11,4 +11,13 @@ class PostsController < ApplicationController
       redirect_to root_path
     end
   end
+  def destroy
+    Post.find_by_id(params[:id]).destroy
+    redirect_to '/', notice: "Destroyed :)"
+  end
+  def index
+
+  end
+
+
 end

@@ -1,6 +1,6 @@
 
   <%= image_tag(current_user.image_link) unless current_user.image_link.nil? %>
-  <%= form_for :post, url: "/post", method: :post do |f| %>
+  <%= form_for :post, url: "/posts", method: :post do |f| %>
       <div class="form-group">
         <%= f.text_area :body, placeholder: "What is on your mind?", class: "form-control", rows: '5' %>
         </div>
