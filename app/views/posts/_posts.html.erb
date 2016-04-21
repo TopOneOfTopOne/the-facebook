@@ -1,9 +1,17 @@
-<% Post.all.each do |post| %>
-    <span class="col-md-12">
-  <%= image_tag(post.user.image_link) %>
-  <%= post.body %>
-      |
-  <%= time_ago_in_words post.created_at %> ago
-      <%= link_to("delete", post, method: :delete, class: "btn btn-danger") if current_user == post.user %>
-      </span>
-<% end %>
+<div class="panel panel-default">
+  <% Post.all.each do |post| %>
+    <div class="panel-body">
+      <div class="panel panel-default" style="background-color: lightgrey;">
+        <%= image_tag(post.user.image_link) %>
+        <strong><%= post.user.name %></strong>
+        <%= post.body %>
+            |
+        <small><%= time_ago_in_words post.created_at %> ago</small>
+        <%= link_to("delete", post, method: :delete, class: "btn btn-danger") if current_user == post.user %>
+      </div>
+      <% @post = post %>
+      <%= render 'comments/comments' %>
+      <%= render 'comments/comment_form' %>
+    </div>
+  <% end %>
+</div>

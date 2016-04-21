@@ -1,0 +1,7 @@
+<div class="panel panel-default">
+<%= form_for :comment, url: '/comments', method: :post do |f| %>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <%= f.text_field :content, placeholder: "What do you think about this?", class: "form-control" %>
+  <%= f.submit "Comment", class: "btn btn-default" %>
+<% end %>
+</div>
