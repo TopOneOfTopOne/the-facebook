@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   get 'users/external_create'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "my_registrations" }
   root to: 'users#success'
   get 'auth/:provider/callback', to: 'users#external_create'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
