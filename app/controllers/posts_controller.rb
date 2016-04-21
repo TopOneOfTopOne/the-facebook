@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def create
+    @post = current_user.posts.create(body: params[:post][:body])
     if @post.save
       redirect_to root_path, notice: "Posted"
     else
