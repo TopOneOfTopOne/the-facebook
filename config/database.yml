@@ -6,8 +6,8 @@ default: &default
 development:
   <<: *default
   database: facebook_development_db
-  username: postgres
-  password: 'asd123'
+  username: <%= ENV['db_uname'] %>
+  password: <%= ENV['db_pass'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -15,8 +15,8 @@ development:
 test:
   <<: *default
   database: facebook_test_db
-  username: postgres
-  password: 'asd123'
+  username: <%= ENV['db_uname'] %>
+  password: <%= ENV['db_pass'] %>
 
 production:
   <<: *default
