@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'figaro'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'omniauth'
 gem 'better_errors', group: :development
 gem 'pg'
 gem 'bootstrap-sass'
