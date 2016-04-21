@@ -7,22 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= render 'shared/navbar' %>
+<% if user_signed_in? %>
+  <%= render 'shared/navbar' %>
+<% else %>
+  <%= render 'shared/signup_banner' %>
+<% end %>
 <% flash.each do |key, value| %>
-    <div class="alert alert-info">
-      <%= value %>
-    </div>
+    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
 <% end %>
 <div class="container">
   <h1><%= yield :header %></h1>
   <div class="row">
-    <div class="col-md-2 col-md-offset-5">
+    <div class="col-md-4 col-md-offset-4">
       <%= yield %>
     </div>
   </div>
 </div>
-
+<hr>
+<%= render 'shared/footer' %>
 
 
 </body>

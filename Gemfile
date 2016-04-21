@@ -8,6 +8,7 @@ gem 'better_errors', group: :development
 gem 'pg'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use SCSS for stylesheets
