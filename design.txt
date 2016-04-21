@@ -5,7 +5,11 @@ Authentication
 user profiles - users#show
 friending - look at sample app with following/followers example
 posts - post model
+comments
 news feed - shows all posts but only friends
 liking -
 
-name, email, imagelink
+##Features
+* OAuth2 w/ facebook
+* Send welcome mail on sign up
+* Utilises devise + bootstrap

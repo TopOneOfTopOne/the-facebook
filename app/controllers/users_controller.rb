@@ -8,4 +8,8 @@ class UsersController < ApplicationController
   def success
 
   end
+
+  def show
+    @user = User.find_by_id(params[:id])
+  end
 end
