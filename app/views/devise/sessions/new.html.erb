@@ -1,5 +1,8 @@
 <h2>Log in</h2>
-
+<hr>
+<%= link_to "Facebook Login", "/auth/facebook", class: "btn btn-primary" %>
+<%= link_to "Github Login", "/auth/github", class: "btn btn-primary" %>
+<hr>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />

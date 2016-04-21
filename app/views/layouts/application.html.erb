@@ -10,7 +10,7 @@
 <% if user_signed_in? %>
   <%= render 'shared/navbar' %>
 <% else %>
-  <%= render 'shared/signup_banner' %>
+  <%= render 'shared/not_logged_in_banner' %>
 <% end %>
 <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
