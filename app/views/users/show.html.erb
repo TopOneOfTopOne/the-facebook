@@ -21,5 +21,13 @@
 
 
   </li>
+  <li class="pull-right">
+    <h3> Posts </h3>
+    <hr>
+    <% @user.posts.each do |post| %>
+        <%= post.body %> | <small><%= time_ago_in_words(post.created_at) %> ago</small>
+        <hr>
+    <% end %>
+  </li>
 </ul>
 

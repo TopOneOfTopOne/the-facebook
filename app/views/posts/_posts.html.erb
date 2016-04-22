@@ -1,36 +1,36 @@
 <div class="panel panel-default">
   <% Post.all.each do |post| %>
-    <% @post = post %>
-    <div class="panel-body">
-      <div class="panel panel-default" style="background-color: lightgrey;">
-        <div class="jumbotron">
-          <ul class="list-inline">
-            <li>
-            <a href="/profile/<%=post.user.id%>">
-              <%= image_tag(post.user.image_link, size: '100x100') %>
-              <strong><%= post.user.name %></strong>
-            </a>
-            </li>
-            <li>
-              <p><%= post.body %></p>
-            </li>
-          </ul>
+      <% @post = post %>
+      <div class="panel-body">
+        <div class="panel panel-default" style="background-color: lightgrey;">
+          <div class="jumbotron">
+            <ul class="list-inline">
+              <li>
+                <a href="/profile/<%=post.user.id%>">
+                  <%= image_tag(post.user.image_link, size: '100x100') %>
+                  <strong><%= post.user.name %></strong>
+                </a>
+              </li>
+              <li>
+                <p><%= post.body %></p>
+              </li>
+            </ul>
+          </div>
+          <small><%= time_ago_in_words post.created_at %> ago</small>
+          <% if current_user == post.user %>
+              <%= link_to("delete", post, method: :delete, class: "btn btn-danger")%>
+          <% else %>
+              <% if like = current_user.likes?(post) %>
+                  <%= link_to("Unlike", post_like_path(post, like), method: :delete, class: "btn btn-warning") %>
+              <% else %>
+                  <%= link_to("Like", post_likes_path(post), method: :post, class: "btn btn-primary") %>
+              <% end %>
+          <% end %>
+          <%= render 'likes/likes' %>
         </div>
-        <small><%= time_ago_in_words post.created_at %> ago</small>
-        <% if current_user == post.user %>
-          <%= link_to("delete", post, method: :delete, class: "btn btn-danger")%>
-        <% else %>
-            <% if like = current_user.likes?(post) %>
-              <%= link_to("Unlike", post_like_path(post, like), method: :delete, class: "btn btn-warning") %>
-            <% else %>
-              <%= link_to("Like", post_likes_path(post), method: :post, class: "btn btn-primary") %>
-            <% end %>
-        <% end %>
-        <%= render 'likes/likes' %>
-      </div>
 
-      <%= render 'comments/comments' %>
-      <%= render 'comments/comment_form' %>
-    </div>
+        <%= render 'comments/comments' %>
+        <%= render 'comments/comment_form' %>
+      </div>
   <% end %>
 </div>
