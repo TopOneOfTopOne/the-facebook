@@ -1,5 +1,8 @@
-<small>
-<% @post.likes.each do |like| %>
-    <b><%= like.user.name %></b>,
-<% end %>like this
-</small>
+<% if @post.likes.empty? %>
+<% else %>
+  <small>
+  <% @post.likes.each do |like| %>
+      <b><%= like.user.name %></b>,
+  <% end %>like this
+  </small>
+<% end %>

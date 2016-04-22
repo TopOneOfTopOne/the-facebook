@@ -5,10 +5,6 @@ class UsersController < ApplicationController
     flash[:success] = "Welcome #{@user.name}"
   end
 
-  def success
-
-  end
-
   def show
     @user = User.find_by_id(params[:id])
   end

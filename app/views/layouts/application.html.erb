@@ -14,15 +14,13 @@
   <%= render 'shared/not_logged_in_banner' %>
 <% end %>
 <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+  <%= content_tag(:div, value, class: "alert alert-#{key}") %>
 <% end %>
 <div class="container">
   <h1><%= yield :header %></h1>
-      <%= yield %>
+  <%= yield %>
 </div>
 <hr>
 <%= render 'shared/footer' %>
-
-
 </body>
 </html>

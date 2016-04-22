@@ -2,7 +2,6 @@
   <% Post.all.each do |post| %>
       <% @post = post %>
       <div class="panel-body">
-        <div class="panel panel-default" style="background-color: lightgrey;">
           <div class="jumbotron">
             <ul class="list-inline">
               <li>
@@ -27,8 +26,6 @@
               <% end %>
           <% end %>
           <%= render 'likes/likes' %>
-        </div>
-
         <%= render 'comments/comments' %>
         <%= render 'comments/comment_form' %>
       </div>

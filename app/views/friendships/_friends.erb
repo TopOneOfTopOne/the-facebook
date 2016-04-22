@@ -1,19 +1,19 @@
 <ul class="list-group">
   <li class="list-group-item list-group-item-info">People they friended..</li>
   <% @user.friends.each do |friend| %>
-      <a href="/profile/<%=friend.id%>">
-        <li class="list-group-item">
-          <%= image_tag(friend.image_link, size: "50x50") %> <%= friend.name %>
-        </li>
-      </a>
+    <a href="/profile/<%=friend.id%>">
+      <li class="list-group-item">
+        <%= image_tag(friend.image_link, size: "50x50") %> <%= friend.name %>
+      </li>
+    </a>
   <% end %>
   <hr>
   <li class="list-group-item list-group-item-success">People who friended them</li>
   <% @user.inverse_friends.each do |inverse_friend| %>
-      <a href="/profile/<%= inverse_friend.id %>">
-        <li class="list-group-item">
-          <%= image_tag(inverse_friend.image_link, size: "50x50") %> <%= inverse_friend.name %>
-        </li>
-      </a>
+    <a href="/profile/<%= inverse_friend.id %>">
+      <li class="list-group-item">
+        <%= image_tag(inverse_friend.image_link, size: "50x50") %> <%= inverse_friend.name %>
+      </li>
+    </a>
   <% end %>
 </ul>

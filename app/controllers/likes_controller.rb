@@ -12,7 +12,6 @@ class LikesController < ApplicationController
   def destroy
     @like = current_user.likes.find_by_id(params[:id])
     @like.destroy
-
     redirect_to '/'
   end
 end
