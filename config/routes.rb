@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'friendships/create'
+
+  get 'friendships/destroy'
+
   get 'users/external_create'
 
   devise_for :users, controllers: { registrations: "my_registrations" }
@@ -9,6 +13,7 @@ Rails.application.routes.draw do
     resources :likes
   end
   resources :comments
+  resources :friendships
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
