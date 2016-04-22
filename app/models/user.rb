@@ -5,13 +5,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
-  has_many :inverse_friendships, foreign_key: 'friend_id', class_name: 'Friendship'
+  has_many :inverse_friendships, foreign_key: 'friend_id', class_name: 'Friendship', dependent: :destroy
   has_many :inverse_friends, through: :inverse_friendships, source: :user
-  has_many :posts
-  has_many :comments
-  has_many :likes
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       user.name = auth.info.name
