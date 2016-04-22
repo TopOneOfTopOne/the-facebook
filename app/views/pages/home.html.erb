@@ -1,7 +1,9 @@
 <% if user_signed_in? %>
   <%= render 'posts/post_form' %>
-
+  <hr>
+  <%= render 'posts/posts' %>
 <% else %>
+
+    <%= image_tag('greysky-s.jpg', style: "max-width: 100%") %>
+
 <% end %>
-<hr>
-<%= render 'posts/posts' %>

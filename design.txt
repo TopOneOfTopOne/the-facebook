@@ -15,6 +15,7 @@ liking -
 * Utilises devise + bootstrap
 * Most recent posts displayed first
 * commenting
+* responsive images - achieved w/ style="max-width: 100%"
 
 heroku
 rake db:migrate

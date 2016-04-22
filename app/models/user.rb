@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :comments
+  has_many :likes
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       user.name = auth.info.name
@@ -16,7 +17,12 @@ class User < ActiveRecord::Base
     end
   end
 
-  def send_welcome_email
-    Users.welcome_email(self).deliver_now
+  def likes?(post)
+    likes.each { |like| return like if post == like.post }
+    false
   end
+
+  # def send_welcome_email
+  #   Users.welcome_email(self).deliver_now
+  # end
 end
