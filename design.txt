@@ -10,11 +10,12 @@ news feed - shows all posts but only friends
 liking -
 
 ##Features
-* OAuth2 w/ facebook
+* OAuth2 w/ facebook + github
 * Send welcome mail on sign up
 * Utilises devise + bootstrap
 * Most recent posts displayed first
 * commenting
+* liking
 * responsive images - achieved w/ style="max-width: 100%"
 
 heroku
