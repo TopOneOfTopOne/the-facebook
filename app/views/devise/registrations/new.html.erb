@@ -6,7 +6,7 @@
 
 <%= link_to "Facebook Signup", "/auth/facebook", class: "btn btn-primary" %>
 <%= link_to "Github Signup", "/auth/github", class: "btn btn-primary" %>
-
+<p style="color: red">I recommend signing up with OAuth to utilise a profile picture, This site is for demonstration <b>I will not post anything unsolicited.</b></p>
 <hr>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
