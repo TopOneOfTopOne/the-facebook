@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'faker'
 gem 'figaro'
 gem 'devise'
 gem 'omniauth-facebook'
